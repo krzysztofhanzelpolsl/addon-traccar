@@ -1,0 +1,4 @@
+# https://developers.home-assistant.io/docs/add-ons/repository#repository-configuration
+name: geoffgbsn Traccar add-on repository
+url: 'https://github.com/geoffgbsn/addons-traccar'
+maintainer: Geoff Gibson <admin@gibbyonline.com>
