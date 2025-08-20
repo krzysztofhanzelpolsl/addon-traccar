@@ -13,27 +13,17 @@ WORKDIR /opt/traccar
 
 # Setup base
 ARG TRACCAR_VERSION="v6.9.0"
-RUN \
-    apk add --no-cache \
+RUN apk add --no-cache \
         mariadb-client=10.11.11-r0 \
         nginx=1.26.3-r0 \
         nss=3.105-r0 \
         xmlstarlet=1.6.1-r2 \
-        curl \
-        unzip \
-    && curl -J -L -o /tmp/openjdk17.tar.gz \
-        "https://github.com/AdoptOpenJDK/openjdk17-binaries/releases/download/jdk-17.0.15%2B8/OpenJDK17U-jre_x64_alpine_17.0.15_8.tar.gz" \
-    && mkdir -p /opt/openjdk17 \
-    && tar -xzf /tmp/openjdk17.tar.gz -C /opt/openjdk17 --strip-components=1 \
-    && rm -f /tmp/openjdk17.tar.gz \
-    && apk add --no-cache --virtual .build-deps \
-        bash \
+        curl unzip \
     && curl -J -L -o /tmp/traccar.zip \
         "https://github.com/traccar/traccar/releases/download/${TRACCAR_VERSION}/traccar-other-${TRACCAR_VERSION#v}.zip" \
     && mkdir -p /opt/traccar \
     && unzip -d /opt/traccar /tmp/traccar.zip \
-    && rm -fr /tmp/* \
-    && apk del .build-deps
+    && rm -fr /tmp/*
     
 # Build arguments
 ARG BUILD_ARCH
