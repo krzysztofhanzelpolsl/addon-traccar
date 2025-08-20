@@ -12,13 +12,13 @@ COPY rootfs /
 WORKDIR /opt/traccar
 
 # Setup base
-ARG TRACCAR_VERSION="v6.9.0"
+ARG TRACCAR_VERSION="v6.6"
 RUN \
     apk add --no-cache \
         mariadb-client=10.11.11-r0 \
         nginx=1.26.3-r0 \
         nss=3.105-r0 \
-        openjdk17-jre-headless \
+        openjdk17-jre-headless=17.0.15_p6-r0 \
         xmlstarlet=1.6.1-r2 \
     \
     && curl -J -L -o /tmp/traccar.zip \
