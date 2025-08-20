@@ -18,17 +18,19 @@ RUN \
         mariadb-client=10.11.11-r0 \
         nginx=1.26.3-r0 \
         nss=3.105-r0 \
-        openjdk17-jre-headless=17.0.15_p6-r0 \
         xmlstarlet=1.6.1-r2 \
+        curl unzip \
+    \
+    && curl -O https://dl-cdn.alpinelinux.org/alpine/v3.19/main/x86_64/openjdk17-jre-headless-17.0.15_p6-r0.apk \
+    && apk add --no-cache ./openjdk17-jre-headless-17.0.15_p6-r0.apk \
+    && rm -f openjdk17-jre-headless-17.0.15_p6-r0.apk \
     \
     && curl -J -L -o /tmp/traccar.zip \
-      "https://github.com/traccar/traccar/releases/download/${TRACCAR_VERSION}/traccar-other-${TRACCAR_VERSION#v}.zip" \
-    \
+        "https://github.com/traccar/traccar/releases/download/${TRACCAR_VERSION}/traccar-other-${TRACCAR_VERSION#v}.zip" \
     && mkdir -p /opt/traccar \
     && unzip -d /opt/traccar /tmp/traccar.zip \
-    \
     && rm -fr /tmp/*
-
+    
 # Build arguments
 ARG BUILD_ARCH
 ARG BUILD_DATE
