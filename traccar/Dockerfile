@@ -26,7 +26,7 @@ RUN apk add --no-cache \
     && mkdir -p /opt/traccar \
     && unzip -d /opt/traccar /tmp/traccar.zip \
     && rm -fr /tmp/*
-ENV PATH="/opt/openjdk17/bin:${PATH}" \    
+ENV PATH="/opt/openjdk17/bin:${PATH}"
 # Build arguments
 ARG BUILD_ARCH
 ARG BUILD_DATE
