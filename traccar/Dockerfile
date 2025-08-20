@@ -13,18 +13,20 @@ WORKDIR /opt/traccar
 
 # Setup base
 ARG TRACCAR_VERSION="v6.9.0"
+
 RUN apk add --no-cache \
         mariadb-client=10.11.11-r0 \
         nginx=1.26.3-r0 \
         nss=3.105-r0 \
         xmlstarlet=1.6.1-r2 \
+        openjdk17-jre-headless \
         curl unzip \
     && curl -J -L -o /tmp/traccar.zip \
         "https://github.com/traccar/traccar/releases/download/${TRACCAR_VERSION}/traccar-other-${TRACCAR_VERSION#v}.zip" \
     && mkdir -p /opt/traccar \
     && unzip -d /opt/traccar /tmp/traccar.zip \
     && rm -fr /tmp/*
-    
+ENV PATH="/opt/openjdk17/bin:${PATH}" \    
 # Build arguments
 ARG BUILD_ARCH
 ARG BUILD_DATE
