@@ -3,6 +3,10 @@
 # Home Assistant Community Add-on: Traccar
 # Runs the Traccar daemon
 # ==============================================================================
+
+set -x
+exec 2>&1
+
 declare -a options
 
 bashio::log.info "Starting Traccar server..."
