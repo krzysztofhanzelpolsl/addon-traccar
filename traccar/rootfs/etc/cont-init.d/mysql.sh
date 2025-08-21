@@ -4,8 +4,8 @@
 # Pre-configures the MySQL clients, if the service is available
 # ==============================================================================
 
-set -x              # pokaż każde polecenie przed wykonaniem
-exec 2>&1           # przekieruj stderr do stdout
+#set -x              # pokaż każde polecenie przed wykonaniem
+#exec 2>&1           # przekieruj stderr do stdout
 
 readonly CONFIG="/etc/traccar/hassio.xml"
 declare host
