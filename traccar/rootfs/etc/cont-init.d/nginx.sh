@@ -4,8 +4,8 @@
 # Configures NGINX for use with the Traccar server
 # ==============================================================================
 
-set -x              # pokaż każde polecenie przed wykonaniem
-exec 2>&1           # przekieruj stderr do stdout
+#set -x              # pokaż każde polecenie przed wykonaniem
+#exec 2>&1           # przekieruj stderr do stdout
 
 # Generate direct access configuration, if enabled.
 if bashio::var.has_value "$(bashio::addon.port 80)"; then
