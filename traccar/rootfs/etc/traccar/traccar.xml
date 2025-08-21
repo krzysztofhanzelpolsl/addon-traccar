@@ -6,9 +6,29 @@
     <!--
     Loads default configuration for the Hass.io add-on.
     WARNING: Do not remove this line!
-    -->
+    
     <entry key='config.default'>/etc/traccar/hassio.xml</entry>
+    -->
+    <entry key='database.driver'>com.mysql.cj.jdbc.Driver</entry>
+    <entry key='database.url'>jdbc:mysql://core-mariadb:3306/traccar?serverTimezone=UTC&amp;useSSL=false&amp;allowMultiQueries=true&amp;autoReconnect=true&amp;useUnicode=yes&amp;characterEncoding=UTF-8&amp;sessionVariable>
+    <entry key='database.user'>service</entry>
+    <entry key='database.password'></entry> # <-- password here
 
+    <entry key='logger.enable'>true</entry>
+    <entry key='logger.console'>true</entry>
+    <entry key='logger.level'>info</entry>
+
+    <entry key='processing.copyAttributes.enable'>true</entry> 
+    <entry key='processing.copyAttributes'>power,ignition,motion,batteryLevel</entry> 
+    <entry key='geocoder.enable'>true</entry> 
+    <entry key='geocoder.type'>nominatim</entry> 
+    <entry key='geocoder.url'>https://eu1.locationiq.com/v1/reverse.php</entry> 
+    <entry key='geocoder.key'></entry> # <-- key here
+    <entry key='geocoder.onRequest'>false</entry>
+    <entry key='geocoder.ignorePositions'>false</entry>
+    <entry key='geocoder.reuseDistance'>20</entry>
+    <entry key='geocoder.cacheSize'>10000</entry>
+    
     <!--
     This is the main configuration file. All your configuration parameters should be placed in this file.
     Parameters in the main config file override values in the default file. Do not
@@ -33,7 +53,7 @@
     <entry key='trv.port'>5010</entry>
     <entry key='suntech.port'>5011</entry>
     <entry key='progress.port'>5012</entry>
-    <entry key='h02.port'>5013</entry>
+    --><entry key='h02.port'>5013</entry><!--
     <entry key='jt600.port'>5014</entry>
     <entry key='huabao.port'>5015</entry>
     <entry key='v680.port'>5016</entry>
@@ -43,7 +63,7 @@
     <entry key='meitrack.port'>5020</entry>
     <entry key='skypatrol.port'>5021</entry>
     <entry key='gt02.port'>5022</entry>
-    <entry key='gt06.port'>5023</entry>
+    --><entry key='gt06.port'>5023</entry><!--
     <entry key='megastek.port'>5024</entry>
     <entry key='navigil.port'>5025</entry>
     <entry key='gpsgate.port'>5026</entry>
