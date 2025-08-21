@@ -6,7 +6,8 @@
     <!--
     Loads default configuration for the Hass.io add-on.
     WARNING: Do not remove this line!
-    
+    #idk why but mysql.sh create database entries but they disappear from hassio.xml. As i dnt have time just workaround below.
+    #works well with Tracker GPS WanWay Tech S20 afther the GPS 'milenium' bug with the 2006 date in the GPS positions
     <entry key='config.default'>/etc/traccar/hassio.xml</entry>
     -->
     <entry key='database.driver'>com.mysql.cj.jdbc.Driver</entry>
