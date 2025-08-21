@@ -4,8 +4,8 @@
 # Ensures the user configuration file is present
 # ==============================================================================
 
-set -x              # pokaż każde polecenie przed wykonaniem
-exec 2>&1           # przekieruj stderr do stdout
+#set -x              # pokaż każde polecenie przed wykonaniem
+#exec 2>&1           # przekieruj stderr do stdout
 
 declare host
 declare password
