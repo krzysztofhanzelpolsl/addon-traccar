@@ -12,7 +12,7 @@ COPY rootfs /
 WORKDIR /opt/traccar
 
 # Setup base
-ARG TRACCAR_VERSION="v6.9.1"
+ARG TRACCAR_VERSION="v6.11.1"
 
 RUN apk add --no-cache \
         nginx=1.26.3-r0 \
